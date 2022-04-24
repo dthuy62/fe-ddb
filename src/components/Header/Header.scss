@@ -1,0 +1,20 @@
+.header {
+  &__content {
+    color: wheat;
+    display: flex;
+    justify-content: left;
+    list-style-type: none;
+    align-items: center;
+    font-size: 1.2rem;
+    li {
+      margin: 0 1rem;
+      cursor: pointer;
+
+      &:hover {
+        color: aliceblue;
+        text-decoration-line: underline;
+      }
+    }
+
+  }
+}
