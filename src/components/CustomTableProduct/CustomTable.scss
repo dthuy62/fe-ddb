@@ -1,0 +1,13 @@
+.header-table {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin: 24px;
+  .ant-breadcrumb {
+    margin: 16px !important;
+  }
+  .add-btn {
+    margin: 16px;
+  }
+}
