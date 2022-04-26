@@ -1,39 +1,25 @@
-import './App.css';
+import logo from './logo.svg';
 import 'antd/dist/antd.css';
-import {Routes, Route} from 'react-router-dom';
-import Dasdboard from "./pages";
-import {useEffect, useState} from "react";
-import productApi from "./services/API/productApi";
-import axios from "axios";
-import AddProduct from "./components/Add";
-import React from "react";
+import {Link, Route, Routes, useLocation} from "react-router-dom";
 import HeaderComponent from "./components/Header";
+import {useState} from "react";
+import {Button, Layout} from "antd";
 import SideMenu from "./components/SideMenu";
-import {Layout} from "antd";
-import CustomTable from "./components/CustomTable";
+import AddProduct from "./components/AddProducts";
+import Edit from "./components/Edit";
+import CustomTable from "./components/CustomTableProduct";
+import HomePage from "./pages";
+import React from "react";
 
-const {Sider} = Layout;
 
 function App() {
 
-  const [collapsed, setCollapsed] = useState(false);
+
 
   return (
-      <>
-        <HeaderComponent />
-        <Layout style={{minHeight: '100vh'}}>
-          <Sider collapsible collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
-            <div className="logo" style={{height: "64px"}}/>
-            <SideMenu/>
-          </Sider>
-          <Routes>
-            <Route path="/" element={<CustomTable/>}/>
-            <Route path="/add-product" element={<AddProduct/>}/>
-          </Routes>
-        </Layout>
-
-      </>
-
+      <Routes>
+        <Route path="*" element={<HomePage />}/>
+      </Routes>
   );
 }
 
