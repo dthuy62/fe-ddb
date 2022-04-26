@@ -11,6 +11,9 @@ import StaffService from "../../services/staff.service";
 const { Option } = Select;
 
 const branchCodeList = ['CN1', 'CN2'];
+const branchCN1 = ['CN1'];
+const branchCN2 = ['CN2'];
+
 
 const AddStaff = () => {
 
@@ -21,7 +24,7 @@ const AddStaff = () => {
   const [dob, setDob] = useState('2019-04-13T00:00:00.000Z')
   const [phoneNumber, setPhoneNumber] = useState("");
   const [salary, setSalary] = useState("");
-  const [branchCode, setBranchCode] = useState(['CN1', 'CN2']);
+  const [branchCode, setBranchCode] = useState(branchCodeList);
 
 
 
@@ -59,14 +62,14 @@ const AddStaff = () => {
           {
             currentRoute === 'server'
                 ? (
-                    <InputField  type="option" label="branchCode" data={['CN1', 'CN2']}
+                    <InputField  type="option" label="branchCode" data={branchCodeList}
                                  setData={setBranchCode} onChange={handleChangeOption} />
                 ) : currentRoute === 'station-one' ? (
-                    <InputField disabled="disabled" label="branchCode" data='CN1'
-                                setData={setBranchCode}  />
+                    <InputField type="option"  disabled="disabled" label="branchCode" data={branchCN1}
+                                setData={branchCN1}  onChange={handleChangeOption} />
                 ) : (
-                    <InputField disabled="disabled" label="branchCode" data='CN2'
-                                setData={setBranchCode}  />
+                    <InputField type="option" disabled="disabled" label="branchCode" data={branchCN2}
+                                setData={branchCN1} onChange={handleChangeOption}  />
                 )
           }
 

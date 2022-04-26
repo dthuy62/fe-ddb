@@ -6,6 +6,7 @@ const {Option} = Select;
 
 const InputField = (props) => {
   const {data, setData, label, type, onChange, disabled, station, value} = props;
+
   return (
       <>
         {
