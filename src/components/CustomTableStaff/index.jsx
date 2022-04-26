@@ -33,6 +33,8 @@ const CustomTableStaff = () => {
       title: 'id',
       dataIndex: 'id',
       key: 'id',
+      defaultSortOrder: 'ascend',sorter: (a, b) => a.id - b.id,
+      sortDirections: ['ascend'],
       render: text => <a>{text}</a>,
     },
     {

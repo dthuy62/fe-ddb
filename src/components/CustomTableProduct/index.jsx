@@ -6,7 +6,7 @@ import './CustomTable.scss';
 import ProductService from "../../services/product.service";
 import getServerPath from "../../util";
 
-const { Content } = Layout;
+const {Content} = Layout;
 
 const CustomTableProduct = () => {
 
@@ -38,7 +38,14 @@ const CustomTableProduct = () => {
       title: 'id',
       dataIndex: 'id',
       key: 'id',
+      defaultSortOrder: 'ascend',sorter: (a, b) => a.id - b.id,
+      sortDirections: ['ascend'],
       render: text => <a>{text}</a>,
+    },
+    {
+      title: 'nameProduct',
+      key: 'nameProduct',
+      dataIndex: 'nameProduct',
     },
     {
       title: 'dvt',
@@ -68,11 +75,6 @@ const CustomTableProduct = () => {
       dataIndex: 'amount',
     },
     {
-      title: 'nameProduct',
-      key: 'nameProduct',
-      dataIndex: 'nameProduct',
-    },
-    {
       title: 'Action',
       key: 'action',
       render: (text, record) => (
@@ -86,7 +88,6 @@ const CustomTableProduct = () => {
       ),
     },
   ];
-
 
 
   const handleDelete = async (id) => {
@@ -107,8 +108,9 @@ const CustomTableProduct = () => {
 
           <div className="site-layout-background" style={{
             padding: 24,
-            minHeight: 360,}}>
-            <Table columns={columnsProduct} dataSource={productList} />
+            minHeight: 360,
+          }}>
+            <Table columns={columnsProduct} dataSource={productList}/>
           </div>
         </Content>
       </Layout>
